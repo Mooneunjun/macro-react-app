@@ -1,0 +1,35 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background-color: #171717;
+  color: white;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.sidebar li {
+  font-size: 14px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: #33333360;
+}

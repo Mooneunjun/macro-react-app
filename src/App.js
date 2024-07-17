@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { useState } from "react";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         openWriteModal={openWriteModal}
         isSidebarOpen={isSidebarOpen}
       />
+      <Sidebar isSidebarOpen={isSidebarOpen} />
       {/* 나머지 앱 내용 */}
     </div>
   );
