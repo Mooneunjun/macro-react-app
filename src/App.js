@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header/Header";
+import { useState } from "react";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    console.log(isSidebarOpen);
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const openWriteModal = () => {
+    // 글쓰기 모달을 여는 로직
+    console.log("글쓰기 모달 열기");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header
+        toggleSidebar={toggleSidebar}
+        openWriteModal={openWriteModal}
+        isSidebarOpen={isSidebarOpen}
+      />
+      {/* 나머지 앱 내용 */}
     </div>
   );
 }
