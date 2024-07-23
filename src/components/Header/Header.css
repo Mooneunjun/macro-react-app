@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 8px 10px;
-  background-color: #333333;
+  background-color: #212121;
   border-bottom: none;
   margin-bottom: 4px;
 }
@@ -10,13 +10,22 @@
 .left-buttons {
   display: flex;
   justify-content: space-between;
-  width: 80px;
+  width: 80px; /* 기본 너비 */
+  min-width: 80px; /* 기본 최소 너비 */
   transition: all 0.3s;
 }
 
 .sidebar-on {
-  width: 296px;
+  transition: all 0.3s;
+  width: 240px; /* 너비를 설정하여 요소를 확장 */
+  min-width: 240px; /* 최소 너비를 설정하여 요소가 작아지지 않도록 보장 */
   z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .left-buttons {
+    display: none;
+  }
 }
 
 .right-header {
@@ -35,7 +44,7 @@
 }
 
 .profile:hover {
-  background-color: #444444aa;
+  background-color: #333333aa;
   cursor: pointer;
 }
 
@@ -45,12 +54,18 @@
   border-radius: 50%;
 }
 
+@media screen and (max-width: 768px) {
+  .profile {
+    display: none;
+  }
+}
+
 .sidebar-button {
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #33333300;
+  background-color: #21212100;
   width: 40px;
   height: 40px;
   color: #ffffffc0;
@@ -58,7 +73,7 @@
 }
 
 .sidebar-button:hover {
-  background-color: #44444495;
+  background-color: #33333395;
   border-radius: 8px;
 }
 
@@ -66,25 +81,43 @@
   background-color: #33333360;
 }
 
-.text-button {
+.wirte-button {
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #33333300;
+  background-color: #21212100;
   width: 40px;
   height: 40px;
   color: #ffffffc0;
   cursor: pointer;
 }
 
-.text-button:hover {
-  background-color: #44444495;
+.wirte-button:hover {
+  background-color: #33333395;
   border-radius: 8px;
 }
 
-.sidebar-on .text-button:hover {
+.sidebar-on .wirte-button:hover {
   background-color: #33333360;
+}
+
+.second-sidebar-button {
+  border: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  width: 40px;
+  height: 40px;
+  color: #ffffffc0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .second-sidebar-button {
+    display: flex;
+  }
 }
 
 .menu-version {
@@ -95,8 +128,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333333;
-
+  background-color: #212121;
+  border-radius: 8px;
   height: 40px;
   color: #ffffffc0;
   cursor: pointer;
@@ -104,6 +137,29 @@
 }
 
 .menu-version:hover {
-  background-color: #444444aa;
-  border-radius: 8px;
+  background-color: #333333aa;
+}
+
+@media (max-width: 768px) {
+  .menu-version {
+    margin-left: 0px;
+  }
+}
+
+.second-wirte-button {
+  border: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  width: 40px;
+  height: 40px;
+  color: #ffffffc0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .second-wirte-button {
+    display: flex;
+  }
 }

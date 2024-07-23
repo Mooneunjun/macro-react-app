@@ -3,8 +3,24 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #333333;
+  background-color: #212121;
 }
 * {
   box-sizing: border-box;
+}
+
+.black-background {
+  display: none;
+  background-color: #0f0f0f60;
+  position: absolute;
+  top: 0px;
+
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .black-background {
+    display: flex;
+  }
 }

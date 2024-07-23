@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   height: 100%;
   width: 260px;
   background-color: #171717;
@@ -18,15 +19,98 @@
   transform: translateX(0);
 }
 
+.sidebar-head {
+  display: none;
+  height: 56px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-head {
+    display: flex;
+  }
+}
+
+.sidebar-head .sidebar-button:hover {
+  background-color: #33333360;
+}
+
+.sidebar-head .wirte-button:hover {
+  background-color: #33333360;
+}
+
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 60px;
+}
+
+.sidebar .sidebar-menu {
+  list-style: none;
+  margin-top: 56px;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar .sidebar-menu {
+    margin-top: 0px;
+  }
+}
+
+.macro-menu {
+  display: flex;
+  gap: 0.625rem;
+  padding: 0 6px;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  user-select: none;
+}
+
+.macro-menu:hover {
+  background-color: #33333360;
+}
+
+.menu-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-logo img {
+  width: 24px;
+  height: 24px;
+}
+
+.menu-name {
+  width: 100%;
+  font-size: 16px;
+  color: #ffffffc0;
+  margin: 0px;
+}
+
+.menu-wirte-button {
+  border: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin-right: 4px;
+  background-color: #33333300;
+  width: 18px;
+  height: 18px;
+  color: #ffffffc0;
+  cursor: pointer;
+}
+
+.macro-menu:hover .menu-wirte-button {
+  display: flex;
 }
 
 .sidebar li {
   font-size: 14px;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 
