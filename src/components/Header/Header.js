@@ -1,10 +1,10 @@
 import React from "react";
 import "./Header.css";
-import WebSidebarButton from "../Button/WebSiderbarButton";
-import WirteButton from "../Button/WirteButton";
-import SidebarButton from "../Button/SidebarButton";
-import MenuVersionButton from "../Button/MenuVersionButton";
-import ProfileButton from "../Button/ProfileButton";
+import WebSidebarButton from "../Share/WebSiderbarButton";
+import WirteButton from "../Share/WirteButton";
+import SidebarButton from "../Share/SidebarButton";
+import MenuVersionButton from "../Share/MenuVersionButton";
+import ProfileButton from "../Share/ProfileButton";
 
 const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
   return (
