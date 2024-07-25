@@ -4,7 +4,7 @@ import "./Sidebar.css";
 import WriteButton from "../Share/WriteButton";
 import SidebarButton from "../Share/SidebarButton";
 import ProfileButton from "../Share/ProfileButton";
-import Tooltip from "../Share/\bTooltip";
+import Tooltip from "../Share/Tooltip";
 
 const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
   const [searchText, setSearchText] = useState("");
