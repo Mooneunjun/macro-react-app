@@ -61,6 +61,7 @@
 }
 
 .sidebar-button {
+  position: relative;
   border: none;
   display: flex;
   justify-content: center;
@@ -81,7 +82,8 @@
   background-color: #33333360;
 }
 
-.wirte-button {
+.write-button {
+  position: relative;
   border: none;
   display: flex;
   justify-content: center;
@@ -93,16 +95,17 @@
   cursor: pointer;
 }
 
-.wirte-button:hover {
+.write-button:hover {
   background-color: #33333395;
   border-radius: 8px;
 }
 
-.sidebar-on .wirte-button:hover {
+.sidebar-on .write-button:hover {
   background-color: #33333360;
 }
 
 .second-sidebar-button {
+  position: relative;
   border: none;
   display: none;
   justify-content: center;
@@ -146,7 +149,8 @@
   }
 }
 
-.second-wirte-button {
+.second-write-button {
+  position: relative;
   border: none;
   display: none;
   justify-content: center;
@@ -159,7 +163,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .second-wirte-button {
+  .second-write-button {
     display: flex;
   }
 }

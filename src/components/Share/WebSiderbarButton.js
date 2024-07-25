@@ -1,6 +1,14 @@
 import React from "react";
+import Tooltip from "./\bTooltip";
 
-const WebSidebarButton = ({ toggleSidebar, className }) => {
+const WebSidebarButton = ({
+  toggleSidebar,
+  className,
+  isSidebarOpen,
+  toolTipClassName,
+}) => {
+  const tooltipText = isSidebarOpen ? "사이드바 닫기" : "사이드바 열기";
+
   return (
     <button className={className} onClick={toggleSidebar}>
       <svg
@@ -18,6 +26,8 @@ const WebSidebarButton = ({ toggleSidebar, className }) => {
           clipRule="evenodd"
         ></path>
       </svg>
+
+      <Tooltip className={toolTipClassName} text={tooltipText} />
     </button>
   );
 };

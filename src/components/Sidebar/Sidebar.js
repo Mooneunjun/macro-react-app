@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "./Sidebar.css";
-import WirteButton from "../Share/WirteButton";
+import WriteButton from "../Share/WriteButton";
 import SidebarButton from "../Share/SidebarButton";
 import ProfileButton from "../Share/ProfileButton";
+import Tooltip from "../Share/\bTooltip";
 
 const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
   const [searchText, setSearchText] = useState("");
@@ -28,16 +29,23 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
         <SidebarButton
           toggleSidebar={toggleSidebar}
           className="sidebar-button"
+          isSidebarOpen={isSidebarOpen}
+          toolTipClassName="sidebar-button-tooltip"
         />
-        <WirteButton openWriteModal={openWriteModal} className="wirte-button" />
+        <WriteButton
+          openWriteModal={openWriteModal}
+          className="write-button"
+          toolTipClassName="write-button-tooltip"
+        />
       </header>
       <nav className="sidebar-menu">
         <div className="macro-menu">
           <ProfileButton className="menu-logo" />
           <h3 className="menu-name">MoonMacro</h3>
-          <WirteButton
+          <WriteButton
             openWriteModal={openWriteModal}
-            className="menu-wirte-button"
+            className="menu-write-button"
+            toolTipClassName=" menu-write-button-tooltip"
           />
         </div>
 
@@ -79,7 +87,7 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
                 >
                   <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10ZM19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path>
                 </svg>
-                <div className="hint">옵션</div>
+                <Tooltip className={`macro-list-option`} text={`옵션`} />
               </div>
             </li>
           ))}

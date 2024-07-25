@@ -7,7 +7,7 @@
   width: 260px;
   background-color: #171717;
   color: white;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.3s ease;
   &.closed {
     transform: translateX(-100%);
@@ -29,7 +29,7 @@
     background-color: #33333360;
   }
 
-  .wirte-button:hover {
+  .write-button:hover {
     background-color: #33333360;
   }
 }
@@ -78,7 +78,8 @@
     margin: 0px;
   }
 
-  .menu-wirte-button {
+  .menu-write-button {
+    position: relative;
     border: none;
     display: none;
     justify-content: center;
@@ -94,7 +95,7 @@
 
   &:hover {
     background-color: #33333360;
-    .menu-wirte-button {
+    .menu-write-button {
       display: flex;
     }
   }
@@ -153,23 +154,6 @@
       svg {
         color: #e4e4e4c0;
         display: none;
-      }
-
-      .hint {
-        position: absolute;
-        top: -30px;
-        right: 0;
-        padding: 8px 10px;
-        font-size: 12px;
-        background-color: #090909;
-        border: 1px solid #303030;
-        border-radius: 0.5rem;
-        color: #e4e4e4;
-        display: none;
-      }
-
-      svg:hover + .hint {
-        display: block; /* hover 상태일 때 표시 */
       }
     }
 
