@@ -49,8 +49,6 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           />
         </div>
 
-        {/* input 검색을 만들어주세요 (input 안에 검색아이콘까지 )*/}
-
         <div className="macro-search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
