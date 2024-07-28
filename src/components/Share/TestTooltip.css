@@ -1,0 +1,89 @@
+.tooltip {
+  position: absolute;
+  padding: 8px 10px;
+  font-size: 12px;
+  background-color: #090909;
+  color: #e4e4e4;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+}
+
+.tooltip.top::before {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: #303030;
+}
+
+.tooltip.top::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: #090909;
+  margin-top: -1px;
+}
+
+.tooltip.bottom::before {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -1px;
+  border-bottom-color: #303030;
+}
+
+.tooltip.bottom::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: #090909;
+  margin-top: -1px;
+}
+
+.tooltip.bottom::before {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: #090909;
+}
+
+.tooltip.left::before {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-right-color: #303030;
+}
+
+.tooltip.left::after {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-right-color: #090909;
+}
+
+.tooltip.right::before {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-left-color: #303030;
+}
+
+.tooltip.right::after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-left-color: #090909;
+}

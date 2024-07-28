@@ -56,12 +56,12 @@
 
   &.sidebar-button-tooltip {
     top: 50px;
-    right: -6%;
-
+    right: -10%;
+    transform: translateX(50%);
     &::before {
       top: auto;
       left: auto;
-      right: 66%;
+      right: 68%;
       bottom: 100%;
       border-top-color: transparent;
       border-bottom-color: #303030;
@@ -69,7 +69,7 @@
     &::after {
       top: auto;
       left: auto;
-      right: 66%;
+      right: 68%;
       bottom: 100%;
       border-top-color: transparent;
       border-bottom-color: #090909;
@@ -116,4 +116,39 @@
 
 svg:hover + .tooltip {
   display: block; /* hover 상태일 때 표시 */
+}
+
+/* tooltip.css */
+/* tooltip.css */
+.tippy-box {
+  border-radius: 0.4rem; /* 둥근 모서리 */
+  padding: 2px; /* 패딩 */
+  font-size: 12px; /* 폰트 크기 */
+  border: 1px solid #303030;
+  background-color: #090909;
+}
+
+.tippy-arrow {
+  color: #303030; /* 화살표 색상 */
+}
+
+.tippy-svg-arrow {
+  width: 8px; /* 화살표의 너비 */
+  height: 8px; /* 화살표의 높이 */
+}
+
+.tippy-arrow:before,
+.tippy-arrow:after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.tippy-arrow:before {
+  border-color: #303030 transparent transparent transparent; /* 화살표 색상 */
+}
+
+.tippy-arrow:after {
+  border-color: #090909 transparent transparent transparent; /* 화살표 색상 */
 }
