@@ -7,19 +7,19 @@
 }
 
 .tippy-box[data-theme~="black"][data-placement^="right"] {
-  right: -4px;
+  right: -2px;
 }
 
 .tippy-box[data-theme~="black"][data-placement^="left"] {
-  left: -4px;
+  left: -2px;
 }
 
 .tippy-box[data-theme~="black"][data-placement^="top"] {
-  top: -4px;
+  top: -2px;
 }
 
 .tippy-box[data-theme~="black"][data-placement^="bottom"] {
-  bottom: -4px;
+  bottom: -2px;
 }
 
 .tippy-content {
