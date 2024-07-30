@@ -1,15 +1,35 @@
-import React from "react";
-import Tooltip from "./Tooltip";
+import React, { useEffect, useRef } from "react";
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css"; // optional
+import "./MyTooltip.css";
+import "tippy.js/dist/border.css";
 
-const SidebarButton = ({
-  toggleSidebar,
-  className,
-  isSidebarOpen,
-  toolTipClassName,
-}) => {
+const SidebarButton = ({ toggleSidebar, className, isSidebarOpen }) => {
+  const buttonRef = useRef(null);
   const tooltipText = isSidebarOpen ? "사이드바 닫기" : "사이드바 열기";
+
+  useEffect(() => {
+    const button = buttonRef.current;
+
+    let instance;
+
+    if (button) {
+      instance = tippy(button, {
+        content: tooltipText,
+        placement: "bottom-start",
+        theme: "black",
+      });
+    }
+
+    return () => {
+      if (instance) {
+        instance.destroy();
+      }
+    };
+  }, [tooltipText]);
+
   return (
-    <button className={className} onClick={toggleSidebar}>
+    <button ref={buttonRef} className={className} onClick={toggleSidebar}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -24,8 +44,6 @@ const SidebarButton = ({
           clipRule="evenodd"
         ></path>
       </svg>
-
-      <Tooltip className={toolTipClassName} text={tooltipText} />
     </button>
   );
 };

@@ -1,0 +1,62 @@
+.tippy-box[data-theme~="black"] {
+  background-color: rgb(9, 9, 9);
+  border: 1px solid rgb(48, 48, 48);
+  color: #e4e4e4;
+  border-radius: 0.4rem;
+  font-size: 12px;
+}
+
+.tippy-box[data-theme~="black"][data-placement^="right"] {
+  right: -4px;
+}
+
+.tippy-box[data-theme~="black"][data-placement^="left"] {
+  left: -4px;
+}
+
+.tippy-box[data-theme~="black"][data-placement^="top"] {
+  top: -4px;
+}
+
+.tippy-box[data-theme~="black"][data-placement^="bottom"] {
+  bottom: -4px;
+}
+
+.tippy-content {
+  padding: 6px 10px 5px 10px !important;
+}
+
+.tippy-box[data-theme~="black"] > .tippy-arrow::before {
+  transform: scale(0.7);
+}
+
+.tippy-box[data-theme~="black"][data-placement^="top"] > .tippy-arrow::before {
+  border-top-color: rgb(9, 9, 9);
+}
+.tippy-box[data-theme~="black"][data-placement^="bottom"]
+  > .tippy-arrow::before {
+  border-bottom-color: rgb(9, 9, 9);
+}
+.tippy-box[data-theme~="black"][data-placement^="left"] > .tippy-arrow::before {
+  border-left-color: rgb(9, 9, 9);
+}
+.tippy-box[data-theme~="black"][data-placement^="right"]
+  > .tippy-arrow::before {
+  border-right-color: rgb(9, 9, 9);
+}
+
+.tippy-box[data-theme~="black"] > .tippy-arrow::after {
+  transform: scale(0.6);
+}
+
+.tippy-box[data-theme~="black"][data-placement^="bottom"] > .tippy-arrow:after {
+  top: -7px;
+}
+
+.tippy-box[data-theme~="black"][data-placement^="top"] > .tippy-arrow:after {
+  bottom: -7px;
+}
+
+.tippy-box[data-theme~="black"][data-placement^="right"] > .tippy-arrow:after {
+  left: -7px;
+}

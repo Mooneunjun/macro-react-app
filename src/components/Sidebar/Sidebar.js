@@ -20,13 +20,8 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           toggleSidebar={toggleSidebar}
           className="sidebar-button"
           isSidebarOpen={isSidebarOpen}
-          toolTipClassName="sidebar-button-tooltip"
         />
-        <WriteButton
-          openWriteModal={openWriteModal}
-          className="write-button"
-          toolTipClassName="write-button-tooltip"
-        />
+        <WriteButton openWriteModal={openWriteModal} className="write-button" />
       </header>
       <nav className="sidebar-menu">
         <div className="macro-menu">
@@ -35,7 +30,6 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           <WriteButton
             openWriteModal={openWriteModal}
             className="menu-write-button"
-            toolTipClassName="menu-write-button-tooltip"
           />
         </div>
 

@@ -18,13 +18,8 @@ const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           toggleSidebar={toggleSidebar}
           isSidebarOpen={isSidebarOpen}
           className="sidebar-button"
-          toolTipClassName="sidebar-button-tooltip"
         />
-        <WriteButton
-          openWriteModal={openWriteModal}
-          className="write-button"
-          toolTipClassName="write-button-tooltip"
-        />
+        <WriteButton openWriteModal={openWriteModal} className="write-button" />
       </div>
 
       <div className="right-header">
@@ -32,7 +27,6 @@ const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           toggleSidebar={toggleSidebar}
           isSidebarOpen={isSidebarOpen}
           className="second-sidebar-button"
-          toolTipClassName="sidebar-button-tooltip"
         />
         <MenuVersionButton
           className="menu-version"
@@ -41,7 +35,6 @@ const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
         <WriteButton
           openWriteModal={openWriteModal}
           className="second-write-button"
-          toolTipClassName="write-button-tooltip"
         />
         <ProfileButton className="profile" />
       </div>
