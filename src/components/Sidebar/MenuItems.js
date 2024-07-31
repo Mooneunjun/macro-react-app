@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Popup from "./Popup"; // 팝업 컴포넌트를 임포트
-import tippy from "tippy.js";
+// import tippy from "tippy.js";
+import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import "../Share/MyTooltip.css";
 import "tippy.js/dist/border.css";
@@ -30,10 +31,10 @@ const sortedMenuItems = [...menuItems].sort(
 );
 
 const MenuItems = () => {
+  // JavaScript 부분
   const [popupIndex, setPopupIndex] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
   const containerRef = useRef(null);
-  const tippyInstances = useRef([]);
 
   const togglePopup = (index, event) => {
     if (popupIndex === index) {
@@ -58,23 +59,8 @@ const MenuItems = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      // Cleanup tippy instances on unmount
-      tippyInstances.current.forEach((instance) => instance.destroy());
     };
   }, []);
-
-  useEffect(() => {
-    const options = document.querySelectorAll(".macro-list-option");
-    // Destroy previous tippy instances
-    tippyInstances.current.forEach((instance) => instance.destroy());
-    tippyInstances.current = Array.from(options).map((option) =>
-      tippy(option, {
-        content: "옵션",
-        placement: "top",
-        theme: "black",
-      })
-    );
-  }, [popupIndex]);
 
   return (
     <div ref={containerRef}>
@@ -88,17 +74,19 @@ const MenuItems = () => {
               }`}
             >
               <span>{item.name}</span>
-              <svg
-                className="macro-list-option"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="16"
-                height="16"
-                fill="currentColor"
-                onClick={(event) => togglePopup(index, event)} // 팝업 토글 함수 호출
-              >
-                <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10ZM19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path>
-              </svg>
+              <Tippy content={`옵션`} placement="bottom" theme="black">
+                <svg
+                  className="macro-list-option"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  onClick={(event) => togglePopup(index, event)} // 팝업 토글 함수 호출
+                >
+                  <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10ZM19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path>
+                </svg>
+              </Tippy>
             </div>
           </li>
         ))}
@@ -115,17 +103,19 @@ const MenuItems = () => {
                 }${popupIndex === adjustedIndex ? " focused" : ""}`}
               >
                 <span>{item.name}</span>
-                <svg
-                  className="macro-list-option"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  onClick={(event) => togglePopup(adjustedIndex, event)} // 팝업 토글 함수 호출
-                >
-                  <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10ZM19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path>
-                </svg>
+                <Tippy content={`옵션`} placement="bottom" theme="black">
+                  <svg
+                    className="macro-list-option"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    onClick={(event) => togglePopup(adjustedIndex, event)} // 팝업 토글 함수 호출
+                  >
+                    <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10ZM19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path>
+                  </svg>
+                </Tippy>
               </div>
             </li>
           );
