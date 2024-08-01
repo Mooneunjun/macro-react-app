@@ -31,7 +31,6 @@ const sortedMenuItems = [...menuItems].sort(
 );
 
 const MenuItems = () => {
-  // JavaScript 부분
   const [popupIndex, setPopupIndex] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
   const containerRef = useRef(null);

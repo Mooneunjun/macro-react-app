@@ -55,6 +55,10 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
       </nav>
 
       <footer className="sidebar-footer">
+        <div className="footer-profile">
+          <ProfileButton className="profile" />
+          <div className="profile-Name">UserName</div>
+        </div>
         <div className="footer-content">
           <p>© 2024 MoonMacro</p>
         </div>

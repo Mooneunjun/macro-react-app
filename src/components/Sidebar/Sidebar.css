@@ -166,6 +166,10 @@
       svg {
         color: #e4e4e4c0;
         display: none;
+        &:focus {
+          outline: none;
+          border: none;
+        }
       }
     }
 
@@ -198,10 +202,36 @@
 .sidebar-footer {
   flex-shrink: 0;
   padding: 10px;
-  p {
+
+  .footer-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    .profile {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .footer-profile:hover {
+    background-color: #33333360;
+  }
+  .footer-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 14px;
     color: #e4e4e4c0;
-    padding: 12px 8px 0px;
+    padding: 8px 10px;
+
+    p {
+      margin: 0;
+    }
   }
 }
 
@@ -235,7 +265,6 @@
   svg {
     width: 20px;
     height: 20px;
-    outline: none;
   }
 
   span {
