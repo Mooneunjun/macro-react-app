@@ -59,6 +59,14 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           <ProfileButton className="profile" />
           <div className="profile-Name">UserName</div>
         </div>
+
+        <div className="footer-buttons">
+          <button className="footer-button">로그아웃</button>
+          <button className="footer-button">설정</button>
+
+          <button className="footer-button">도움말</button>
+        </div>
+
         <div className="footer-content">
           <p>© 2024 MoonMacro</p>
         </div>
