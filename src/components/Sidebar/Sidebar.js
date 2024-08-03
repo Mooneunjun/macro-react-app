@@ -4,6 +4,7 @@ import WriteButton from "../Share/WriteButton";
 import SidebarButton from "../Share/SidebarButton";
 import ProfileButton from "../Share/ProfileButton";
 import MenuItems from "./MenuItems";
+import SidebarFooter from "./SidebarFooter";
 
 const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
   const [searchText, setSearchText] = useState("");
@@ -54,23 +55,7 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
         <MenuItems />
       </nav>
 
-      <footer className="sidebar-footer">
-        <div className="footer-profile">
-          <ProfileButton className="profile" />
-          <div className="profile-Name">UserName</div>
-        </div>
-
-        <div className="footer-buttons">
-          <button className="footer-button">로그아웃</button>
-          <button className="footer-button">설정</button>
-
-          <button className="footer-button">도움말</button>
-        </div>
-
-        <div className="footer-content">
-          <p>© 2024 MoonMacro</p>
-        </div>
-      </footer>
+      <SidebarFooter isSidebarOpen={isSidebarOpen} />
     </div>
   );
 };
