@@ -1,0 +1,105 @@
+.settings-popup {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  box-sizing: border-box;
+  width: 680px;
+  max-width: 94%;
+  background-color: #333333;
+  border-radius: 1rem;
+  border: 1px solid #46464680;
+  box-shadow: 0px 0px 10px 0px #00000060;
+  z-index: 102;
+  display: none;
+  flex-direction: column;
+  user-select: none;
+
+  &.open {
+    display: flex;
+  }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid;
+    border-color: hsla(0, 0%, 100%, 0.1);
+
+    h3 {
+      font-size: 18px;
+      margin: 0px;
+      color: #e4e4e4;
+    }
+
+    button {
+      background-color: #333333;
+      border: none;
+      border-radius: 9999px;
+      color: #e4e4e4;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover {
+        background-color: #444444;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 20px 16px 16px;
+    }
+  }
+
+  .popup-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: #f9f9f9;
+    font-size: 14px;
+
+    .content-row {
+      display: flex;
+      height: 50px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid;
+      border-color: hsla(0, 0%, 100%, 0.1);
+      padding: 0px 0px 12px;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0px;
+      }
+
+      .delete-button {
+        background-color: #ef4444;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 9999px;
+        color: #f9f9f9;
+        font-size: 14px;
+        cursor: pointer;
+        flex-shrink: 0;
+
+        &:hover {
+          background-color: rgba(185, 28, 28);
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 20px 16px 16px;
+    }
+  }
+}

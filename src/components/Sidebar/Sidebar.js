@@ -6,7 +6,12 @@ import ProfileButton from "../Share/ProfileButton";
 import MenuItems from "./MenuItems";
 import SidebarFooter from "./SidebarFooter";
 
-const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
+const Sidebar = ({
+  toggleSidebar,
+  openWriteModal,
+  isSidebarOpen,
+  openSettingsPopup,
+}) => {
   const [searchText, setSearchText] = useState("");
 
   const handleSearchTextChange = (event) => {
@@ -55,7 +60,10 @@ const Sidebar = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
         <MenuItems />
       </nav>
 
-      <SidebarFooter isSidebarOpen={isSidebarOpen} />
+      <SidebarFooter
+        openSettingsPopup={openSettingsPopup}
+        toggleSidebar={toggleSidebar}
+      />
     </div>
   );
 };

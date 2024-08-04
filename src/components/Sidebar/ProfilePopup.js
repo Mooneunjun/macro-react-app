@@ -1,12 +1,26 @@
 import React from "react";
 
-const ProfilePopup = ({ className }) => {
+const ProfilePopup = ({
+  toggleProfilePopup,
+  openSettingsPopup,
+  toggleSidebar,
+  className,
+}) => {
   return (
     <div className={`profile-popup ${className}`}>
       <nav className="profile-popup-content">
         <div className="profile-popup-email"> mooneunjun@icloud.com </div>
         <div className="profile-popup-border"></div>
-        <div className="profile-popup-item profile-popup-setting">
+        <div
+          className="profile-popup-item profile-popup-setting"
+          onClick={() => {
+            openSettingsPopup();
+            toggleProfilePopup();
+            if (window.innerWidth <= 768) {
+              toggleSidebar();
+            }
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -1,13 +1,14 @@
 import React from "react";
+import "./MenuSelectButton.css";
 
-const MenuVersionButton = ({ className, versionName }) => {
+const MenuSelectButton = ({ className, menuName }) => {
   return (
-    <button className={className}>
-      <div>{versionName}</div>
+    <button className={`menu-select-button ${className}`}>
+      <div>{menuName}</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
+        width="24"
+        height="24"
         fill="none"
         viewBox="0 0 24 24"
         className="icon-md text-token-text-tertiary"
@@ -23,4 +24,4 @@ const MenuVersionButton = ({ className, versionName }) => {
   );
 };
 
-export default MenuVersionButton;
+export default MenuSelectButton;

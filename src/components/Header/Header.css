@@ -19,7 +19,7 @@
   transition: all 0.3s;
   width: 240px; /* 너비를 설정하여 요소를 확장 */
   min-width: 240px; /* 최소 너비를 설정하여 요소가 작아지지 않도록 보장 */
-  z-index: 999;
+  z-index: 101;
 }
 
 @media (max-width: 768px) {
@@ -124,27 +124,9 @@
 }
 
 .menu-version {
-  border: none;
   margin-left: 20px;
-  font-weight: 800;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #212121;
-  border-radius: 8px;
-  height: 40px;
-  color: #ffffffc0;
-  cursor: pointer;
-  padding: 0 10px;
-}
 
-.menu-version:hover {
-  background-color: #333333aa;
-}
-
-@media (max-width: 768px) {
-  .menu-version {
+  @media (max-width: 768px) {
     margin-left: 0px;
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProfileButton from "../Share/ProfileButton";
 import ProfilePopup from "./ProfilePopup";
 
-const SidebarFooter = () => {
+const SidebarFooter = ({ openSettingsPopup, toggleSidebar }) => {
   const [isProfilePopupOpen, setIsProfilePopupOpen] = useState(false);
 
   const toggleProfilePopup = () => {
@@ -44,6 +44,9 @@ const SidebarFooter = () => {
       </div>
 
       <ProfilePopup
+        openSettingsPopup={openSettingsPopup}
+        toggleProfilePopup={toggleProfilePopup}
+        toggleSidebar={toggleSidebar}
         className={`${
           isProfilePopupOpen ? "profile-popup-on" : "profile-popup-off"
         }`}

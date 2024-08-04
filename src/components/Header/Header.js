@@ -3,7 +3,7 @@ import "./Header.css";
 import WebSidebarButton from "../Share/WebSiderbarButton";
 import WriteButton from "../Share/WriteButton";
 import SidebarButton from "../Share/SidebarButton";
-import MenuVersionButton from "../Share/MenuVersionButton";
+import MenuSelectButton from "../Share/MenuSelectButton";
 import ProfileButton from "../Share/ProfileButton";
 
 const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
@@ -28,10 +28,7 @@ const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           isSidebarOpen={isSidebarOpen}
           className="second-sidebar-button"
         />
-        <MenuVersionButton
-          className="menu-version"
-          versionName="MoonMacro 1.0"
-        />
+        <MenuSelectButton className="menu-version" menuName="MoonMacro 1.0" />
         <WriteButton
           openWriteModal={openWriteModal}
           className="second-write-button"
