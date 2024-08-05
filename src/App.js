@@ -10,10 +10,22 @@ function App() {
   const [isSettingsPopupOpen, setIsSettingsPopupOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-    setWasSidebarOpen(!isSidebarOpen);
+    const newIsSidebarOpen = !isSidebarOpen;
+    setIsSidebarOpen(newIsSidebarOpen);
+    setWasSidebarOpen(!isSidebarOpen); // 이전 상태를 저장
 
-    console.log(` 사이드바 ${!isSidebarOpen}`);
+    // 테마 색상 변경
+    const themeColorMetaTag = document.querySelector(
+      'meta[name="theme-color"]'
+    );
+    if (themeColorMetaTag) {
+      themeColorMetaTag.setAttribute(
+        "content",
+        newIsSidebarOpen ? "#171717" : "#212121"
+      );
+    }
+
+    console.log(`사이드바 ${newIsSidebarOpen ? "열림" : "닫힘"}`);
   };
 
   const openWriteModal = () => {
@@ -72,7 +84,7 @@ function App() {
             isSettingsPopupOpen ? "settings-popup-background" : ""
           }`}
           onClick={() => {
-            if (isSidebarOpen) toggleSidebar();
+            if (isSidebarOpen && window.innerWidth <= 768) toggleSidebar();
             if (isSettingsPopupOpen) setIsSettingsPopupOpen(false);
           }}
         />

@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
     border-bottom: 1px solid;
     border-color: hsla(0, 0%, 100%, 0.1);
 
@@ -61,7 +61,7 @@
   }
 
   .popup-content {
-    padding: 24px;
+    padding: 12px 24px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -69,6 +69,7 @@
     font-size: 14px;
 
     .content-row {
+      position: relative;
       display: flex;
       height: 50px;
       justify-content: space-between;
@@ -80,6 +81,87 @@
       &:last-child {
         border-bottom: none;
         padding-bottom: 0px;
+      }
+
+      .theme-select-button {
+        background-color: #333333;
+        height: 36px;
+        font-weight: 500;
+
+        span {
+          color: #e4e4e4;
+          font-size: 14px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          color: #e4e4e4;
+        }
+
+        &:hover {
+          background-color: #444444;
+        }
+      }
+
+      .them-select-option {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        z-index: 103;
+        width: 220px;
+        background-color: #333333;
+        border: 1px solid #46464680;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 10px 0px #00000060;
+        padding: 8px 0px;
+        display: none;
+
+        &.open {
+          display: block;
+        }
+
+        .them-select-option-item {
+          background-color: #333333;
+          color: #e4e4e4;
+          font-size: 14px;
+          padding: 12px;
+          margin: 0px 8px;
+          cursor: pointer;
+          border-radius: 0.4rem;
+          display: flex;
+          justify-content: space-between;
+
+          svg {
+            width: 16px;
+            height: 16px;
+            color: #e4e4e4;
+          }
+          &:hover {
+            background-color: #444444;
+          }
+        }
+      }
+
+      .language-select-button {
+        background-color: #333333;
+        height: 36px;
+        font-weight: 500;
+
+        span {
+          color: #e4e4e4;
+          font-size: 14px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          color: #e4e4e4;
+        }
+
+        &:hover {
+          background-color: #444444;
+        }
       }
 
       .delete-button {
@@ -94,6 +176,22 @@
 
         &:hover {
           background-color: rgba(185, 28, 28);
+        }
+      }
+
+      .logout-button {
+        background-color: #333333;
+        padding: 8px 14px;
+        border: 1px solid #444444;
+        border-radius: 9999px;
+        color: #f9f9f9;
+        font-size: 14px;
+        cursor: pointer;
+        flex-shrink: 0;
+
+        &:hover {
+          background-color: #444444;
+          border: 1px solid #525252;
         }
       }
     }

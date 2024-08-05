@@ -12,6 +12,7 @@
   color: white;
   overflow: visible;
   transition: transform 0.3s ease;
+  border-right: 1px solid #1a1a1a;
   &.closed {
     transform: translateX(-100%);
   }
@@ -215,7 +216,7 @@
 .options-popup-button-pin,
 .options-popup-button-edit,
 .options-popup-button-delete {
-  padding: 10px 22px 10px 16px;
+  padding: 10px 16px 10px 16px;
   border: none;
   width: 100%;
   background-color: #303030;

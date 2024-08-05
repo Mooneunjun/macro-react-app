@@ -1,28 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Popup = ({ isVisible, position }) => {
+const Popup = React.forwardRef(({ isVisible, position }, ref) => {
   if (!isVisible) return null;
 
   return ReactDOM.createPortal(
     <div
+      ref={ref}
       className="options-popup-container"
       style={{ top: position.top, left: position.left, position: "absolute" }}
     >
       <div className="options-popup-button-pin">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
+          viewBox="0 0 16 16"
+          fill="currentColor"
         >
           <path
-            fill="currentColor"
             fillRule="evenodd"
-            d="M11.293 3.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414L13 6.414V15a1 1 0 1 1-2 0V6.414L8.707 8.707a1 1 0 0 1-1.414-1.414zM4 14a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3a1 1 0 1 1 2 0v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-3a1 1 0 0 1 1-1"
+            d="M2 2.75A.75.75 0 0 1 2.75 2h9.5a.75.75 0 0 1 0 1.5h-9.5A.75.75 0 0 1 2 2.75ZM2 6.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5A.75.75 0 0 1 2 6.25Zm0 3.5A.75.75 0 0 1 2.75 9h3.5a.75.75 0 0 1 0 1.5h-3.5A.75.75 0 0 1 2 9.75ZM9.22 9.53a.75.75 0 0 1 0-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1-1.06 1.06l-.97-.97v5.69a.75.75 0 0 1-1.5 0V8.56l-.97.97a.75.75 0 0 1-1.06 0Z"
             clipRule="evenodd"
-          ></path>
+          />
         </svg>
         <span>&nbsp;고정</span>
       </div>
@@ -63,6 +61,6 @@ const Popup = ({ isVisible, position }) => {
     </div>,
     document.body // 팝업을 body에 렌더링
   );
-};
+});
 
 export default Popup;

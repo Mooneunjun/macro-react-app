@@ -11,7 +11,7 @@ body {
 
 .black-background {
   display: none;
-  background-color: #0f0f0f80;
+  background-color: #00000080;
   position: absolute;
   top: 0px;
   z-index: 99;
@@ -21,6 +21,7 @@ body {
 }
 
 .settings-popup-background {
+  background-color: #00000080;
   display: flex;
   z-index: 101;
 }

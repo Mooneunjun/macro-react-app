@@ -125,10 +125,6 @@
 
 .menu-version {
   margin-left: 20px;
-
-  @media (max-width: 768px) {
-    margin-left: 0px;
-  }
 }
 
 .second-write-button {
