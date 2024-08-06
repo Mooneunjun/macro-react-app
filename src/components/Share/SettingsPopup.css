@@ -133,10 +133,18 @@
           justify-content: space-between;
 
           svg {
+            display: none;
             width: 16px;
             height: 16px;
             color: #e4e4e4;
           }
+
+          &.elect {
+            svg {
+              display: block;
+            }
+          }
+
           &:hover {
             background-color: #444444;
           }
