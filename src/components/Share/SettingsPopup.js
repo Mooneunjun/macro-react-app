@@ -32,6 +32,32 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
     };
   }, []);
 
+  // 테마 변경 함수
+  const [theme, setTheme] = useState("system"); // 초기 테마를 시스템 기본값으로 설정
+
+  // 시스템 기본 테마를 가져오는 함수
+  const getSystemTheme = () => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+    return "light";
+  };
+
+  // 테마 변경 함수
+  const changeTheme = (newTheme) => {
+    setTheme(newTheme);
+    const themeToApply = newTheme === "system" ? getSystemTheme() : newTheme;
+    document.documentElement.setAttribute("data-theme", themeToApply);
+  };
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 초기 테마 설정
+    changeTheme(theme);
+  }, []);
+
   return (
     <div className={`settings-popup ${className}`}>
       <div className="popup-header">
@@ -58,7 +84,13 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
           <span>화면 모드</span>
           <MenuSelectButton
             className="theme-select-button"
-            menuName="시스템"
+            menuName={
+              theme === "system"
+                ? "시스템"
+                : theme === "dark"
+                ? "다크 모드"
+                : "라이트 모드"
+            }
             onMouseDown={(e) => e.preventDefault()} // 기본 동작 중지
             onClick={toggleThemeSelectOption} // 클릭 시 토글
           />
@@ -68,7 +100,11 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
             }`}
             ref={themeSelectRef}
           >
-            <div className="them-select-option-item elect" value="default">
+            <div
+              className="them-select-option-item elect"
+              value="default"
+              onClick={() => changeTheme("system")}
+            >
               <span>시스템</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +119,11 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
                 />
               </svg>
             </div>
-            <div className="them-select-option-item" value="dark">
+            <div
+              className="them-select-option-item"
+              value="dark"
+              onClick={() => changeTheme("dark")}
+            >
               <span>다크 모드</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +138,11 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
                 />
               </svg>
             </div>
-            <div className="them-select-option-item " value="light">
+            <div
+              className="them-select-option-item "
+              value="light"
+              onClick={() => changeTheme("light")}
+            >
               <span>라이트 모드</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
