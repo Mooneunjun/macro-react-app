@@ -139,7 +139,7 @@
             color: #e4e4e4;
           }
 
-          &.elect {
+          &.selected {
             svg {
               display: block;
             }

@@ -49,13 +49,17 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
   // 테마 변경 함수
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
+    localStorage.setItem("theme", newTheme); // 선택한 테마를 로컬 저장소에 저장
     const themeToApply = newTheme === "system" ? getSystemTheme() : newTheme;
     document.documentElement.setAttribute("data-theme", themeToApply);
+    setIsThemeSelectOptionOpen(false); // 테마 변경 후 팝업 닫기
   };
 
   useEffect(() => {
-    // 컴포넌트가 마운트될 때 초기 테마 설정
-    changeTheme(theme);
+    // 컴포넌트가 마운트될 때 로컬 저장소에서 테마를 가져옴
+    const savedTheme = localStorage.getItem("theme") || "system";
+    setTheme(savedTheme);
+    changeTheme(savedTheme);
   }, []);
 
   return (
@@ -101,9 +105,13 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
             ref={themeSelectRef}
           >
             <div
-              className="them-select-option-item elect"
+              className={`them-select-option-item ${
+                theme === "system" ? "selected" : ""
+              }`}
               value="default"
-              onClick={() => changeTheme("system")}
+              onClick={() => {
+                changeTheme("system");
+              }}
             >
               <span>시스템</span>
               <svg
@@ -120,7 +128,9 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
               </svg>
             </div>
             <div
-              className="them-select-option-item"
+              className={`them-select-option-item ${
+                theme === "dark" ? "selected" : ""
+              }`}
               value="dark"
               onClick={() => changeTheme("dark")}
             >
@@ -139,7 +149,9 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
               </svg>
             </div>
             <div
-              className="them-select-option-item "
+              className={`them-select-option-item ${
+                theme === "light" ? "selected" : ""
+              }`}
               value="light"
               onClick={() => changeTheme("light")}
             >
