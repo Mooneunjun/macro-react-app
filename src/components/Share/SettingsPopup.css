@@ -145,7 +145,7 @@
           }
 
           &:hover {
-            background-color: var(--secondary-hover-color);
+            background-color: var(--primary-popup-border-color);
           }
         }
       }

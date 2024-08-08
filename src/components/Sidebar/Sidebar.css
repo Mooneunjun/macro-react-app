@@ -12,7 +12,7 @@
   color: white;
   overflow: visible;
   transition: transform 0.3s ease;
-  border-right: 1px solid #1a1a1a;
+  border-right: 1px solid var(--primary-popup-border-color);
   &.closed {
     transform: translateX(-100%);
   }
@@ -206,11 +206,11 @@
   display: flex;
   padding: 8px 6px;
   flex-direction: column;
-  background-color: var(--primary-bg-color);
+  background-color: var(--primary-popup-color);
   border-radius: 0.7rem;
   box-shadow: 0px 0px 10px 0px var(--primary-boxshadow-color);
   z-index: 100;
-  border: 1px solid var(--sceondary-bg-color);
+  border: 1px solid var(--primary-popup-border-color);
 }
 
 .options-popup-button-pin,
@@ -219,8 +219,8 @@
   padding: 10px 16px 10px 16px;
   border: none;
   width: 100%;
-  background-color: var(--primary-bg-color);
-  color: var(--primary-text-color);
+  background-color: var(--primary-popup-color);
+  color: var(--secondary-text-color);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -251,7 +251,7 @@
 .options-popup-button-pin:hover,
 .options-popup-button-edit:hover,
 .options-popup-button-delete:hover {
-  background-color: var(--primary-hover-color);
+  background-color: var(--primary-popup-border-color);
 }
 
 .sidebar-footer {
@@ -330,7 +330,7 @@
       }
 
       &:hover {
-        background-color: var(--primary-hover-color);
+        background-color: var(--primary-popup-border-color);
       }
     }
 
