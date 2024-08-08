@@ -11,6 +11,7 @@ const Sidebar = ({
   openWriteModal,
   isSidebarOpen,
   openSettingsPopup,
+  transitionEnabled,
 }) => {
   const [searchText, setSearchText] = useState("");
 
@@ -20,7 +21,11 @@ const Sidebar = ({
   };
 
   return (
-    <div className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
+    <div
+      className={`sidebar ${isSidebarOpen ? "open" : "closed"} ${
+        transitionEnabled ? "transition-enabled" : ""
+      }`}
+    >
       <header className="sidebar-head">
         <SidebarButton
           toggleSidebar={toggleSidebar}

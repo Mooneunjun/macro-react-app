@@ -5,7 +5,13 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import SettingsPopup from "./components/Share/SettingsPopup";
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // 로컬 스토리지에서 초기 사이드바 상태를 가져옴
+  const getInitialSidebarState = () => {
+    const savedState = localStorage.getItem("isSidebarOpen");
+    return savedState !== null ? JSON.parse(savedState) : false;
+  };
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(getInitialSidebarState);
   const [wasSidebarOpen, setWasSidebarOpen] = useState(false);
   const [isSettingsPopupOpen, setIsSettingsPopupOpen] = useState(false);
 
@@ -14,17 +20,7 @@ function App() {
     setIsSidebarOpen(newIsSidebarOpen);
     setWasSidebarOpen(!isSidebarOpen); // 이전 상태를 저장
 
-    // 테마 색상 변경
-    const themeColorMetaTag = document.querySelector(
-      'meta[name="theme-color"]'
-    );
-    if (themeColorMetaTag) {
-      themeColorMetaTag.setAttribute(
-        "content",
-        newIsSidebarOpen ? "#171717" : "#212121"
-      );
-    }
-
+    localStorage.setItem("isSidebarOpen", JSON.stringify(newIsSidebarOpen)); // 로컬 스토리지에 저장
     console.log(`사이드바 ${newIsSidebarOpen ? "열림" : "닫힘"}`);
   };
 

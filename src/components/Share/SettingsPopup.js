@@ -1,16 +1,42 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./SettingsPopup.css";
 import MenuSelectButton from "./MenuSelectButton";
 
 const SettingsPopup = ({ className, closeSettingsPopup }) => {
+  // 로컬 스토리지에서 초기 테마를 가져오는 함수
+  const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme : "system";
+  };
+
+  const [theme, setTheme] = useState(getInitialTheme); // 초기 테마를 로컬 스토리지 값으로 설정
   const [isThemeSelectOptionOpen, setIsThemeSelectOptionOpen] = useState(false);
   const themeSelectRef = useRef(null);
 
-  // 상태 토글 함수
-  const toggleThemeSelectOption = (event) => {
-    event.stopPropagation(); // 이벤트 전파 중지
-    setIsThemeSelectOptionOpen((prev) => !prev);
+  // 테마 변경 함수 (useCallback을 사용하여 함수 메모이제이션)
+  const changeTheme = useCallback((newTheme) => {
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme); // 선택한 테마를 로컬 저장소에 저장
+    const themeToApply = newTheme === "system" ? getSystemTheme() : newTheme;
+    document.documentElement.setAttribute("data-theme", themeToApply);
+    setIsThemeSelectOptionOpen(false); // 테마 변경 후 팝업 닫기
+  }, []);
+
+  // 시스템 기본 테마를 가져오는 함수
+  const getSystemTheme = () => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+    return "light";
   };
+
+  // useEffect 훅에서 초기 테마 설정
+  useEffect(() => {
+    changeTheme(theme);
+  }, [theme, changeTheme]); // 종속성 배열에 changeTheme 추가
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,35 +58,11 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
     };
   }, []);
 
-  // 테마 변경 함수
-  const [theme, setTheme] = useState("system"); // 초기 테마를 시스템 기본값으로 설정
-
-  // 시스템 기본 테마를 가져오는 함수
-  const getSystemTheme = () => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      return "dark";
-    }
-    return "light";
+  // 상태 토글 함수
+  const toggleThemeSelectOption = (event) => {
+    event.stopPropagation(); // 이벤트 전파 중지
+    setIsThemeSelectOptionOpen((prev) => !prev);
   };
-
-  // 테마 변경 함수
-  const changeTheme = (newTheme) => {
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme); // 선택한 테마를 로컬 저장소에 저장
-    const themeToApply = newTheme === "system" ? getSystemTheme() : newTheme;
-    document.documentElement.setAttribute("data-theme", themeToApply);
-    setIsThemeSelectOptionOpen(false); // 테마 변경 후 팝업 닫기
-  };
-
-  useEffect(() => {
-    // 컴포넌트가 마운트될 때 로컬 저장소에서 테마를 가져옴
-    const savedTheme = localStorage.getItem("theme") || "system";
-    setTheme(savedTheme);
-    changeTheme(savedTheme);
-  }, []);
 
   return (
     <div className={`settings-popup ${className}`}>
