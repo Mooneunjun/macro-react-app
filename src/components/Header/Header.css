@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 8px 10px;
-  background-color: #212121;
+  background-color: var(--primary-bg-color);
   border-bottom: none;
   margin-bottom: 4px;
 }
@@ -44,7 +44,7 @@
 }
 
 .profile:hover {
-  background-color: #333333aa;
+  background-color: var(--primary-hover-color);
   cursor: pointer;
 }
 
@@ -66,20 +66,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #21212100;
+  background-color: #00000000;
   width: 40px;
   height: 40px;
-  color: #ffffffc0;
+  color: var(--primary-text-color);
   cursor: pointer;
-}
 
-.sidebar-button:hover {
-  background-color: #33333395;
-  border-radius: 8px;
+  &:hover {
+    background-color: var(--primary-hover-color);
+    border-radius: 8px;
+  }
 }
 
 .sidebar-on .sidebar-button:hover {
-  background-color: #33333360;
+  background-color: var(--secondary-hover-color);
 }
 
 .write-button {
@@ -88,20 +88,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #21212100;
+  background-color: #00000000;
   width: 40px;
   height: 40px;
-  color: #ffffffc0;
+  color: var(--primary-text-color);
   cursor: pointer;
-}
 
-.write-button:hover {
-  background-color: #33333395;
-  border-radius: 8px;
+  &:hover {
+    background-color: var(--primary-hover-color);
+    border-radius: 8px;
+  }
 }
 
 .sidebar-on .write-button:hover {
-  background-color: #33333360;
+  background-color: var(--secondary-hover-color);
 }
 
 .second-sidebar-button {
@@ -110,10 +110,10 @@
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: #212121;
+  background-color: var(--primary-bg-color);
   width: 40px;
   height: 40px;
-  color: #ffffffc0;
+  color: var(--primary-text-color);
   cursor: pointer;
 }
 
@@ -133,10 +133,10 @@
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: #212121;
+  background-color: var(--primary-bg-color);
   width: 40px;
   height: 40px;
-  color: #ffffffc0;
+  color: var(--primary-text-color);
   cursor: pointer;
 }
 

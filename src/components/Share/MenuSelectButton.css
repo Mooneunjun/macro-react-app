@@ -5,9 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212121;
+  background-color: var(--primary-bg-color);
   border-radius: 8px;
-  color: #ffffffc0;
+  color: var(--primary-text-color);
   cursor: pointer;
   padding: 6px 12px;
   gap: 0.4rem;
@@ -15,10 +15,10 @@
   svg {
     width: 18px;
     height: 18px;
-    color: #ffffff70;
+    color: var(--primary-svg-color);
   }
 
   &:hover {
-    background-color: #33333395;
+    background-color: var(--primary-hover-color);
   }
 }

@@ -86,7 +86,7 @@ const MenuItems = () => {
               }`}
             >
               <span>{item.name}</span>
-              <Tippy content={`옵션`} placement="bottom" theme="black">
+              <Tippy content={`옵션`} placement="top" theme="black">
                 <svg
                   className="macro-list-option"
                   xmlns="http://www.w3.org/2000/svg"
