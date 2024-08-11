@@ -1,7 +1,7 @@
 import React from "react";
 import "./SettingsPopup.css";
-import MenuSelectButton from "../Share/MenuSelectButton";
 import ThemeSelectOptions from "./ThemeSelectOptions"; // 새 컴포넌트 임포트
+import LanguageSelectionOptions from "./LanguageSelectionOptions";
 
 const SettingsPopup = ({ className, closeSettingsPopup }) => {
   return (
@@ -33,9 +33,7 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
 
         <div className="content-row">
           <span>언어</span>
-          <MenuSelectButton className="language-select-button">
-            {`한국어`}
-          </MenuSelectButton>
+          <LanguageSelectionOptions />
         </div>
 
         <div className="content-row">
