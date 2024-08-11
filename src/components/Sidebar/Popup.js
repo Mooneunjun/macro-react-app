@@ -22,7 +22,7 @@ const Popup = React.forwardRef(({ isVisible, position }, ref) => {
             clipRule="evenodd"
           />
         </svg>
-        <span>&nbsp;고정</span>
+        <span>고정</span>
       </div>
       <div className="options-popup-button-edit">
         <svg
@@ -39,7 +39,7 @@ const Popup = React.forwardRef(({ isVisible, position }, ref) => {
             clipRule="evenodd"
           ></path>
         </svg>
-        <span>&nbsp;수정</span>
+        <span>수정</span>
       </div>
       <div className="options-popup-button-delete">
         <svg
@@ -56,7 +56,7 @@ const Popup = React.forwardRef(({ isVisible, position }, ref) => {
             clipRule="evenodd"
           ></path>
         </svg>
-        <span>&nbsp;삭제</span>
+        <span>삭제</span>
       </div>
     </div>,
     document.body // 팝업을 body에 렌더링

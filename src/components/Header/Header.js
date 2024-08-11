@@ -28,7 +28,9 @@ const Header = ({ toggleSidebar, openWriteModal, isSidebarOpen }) => {
           isSidebarOpen={isSidebarOpen}
           className="second-sidebar-button"
         />
-        <MenuSelectButton className="menu-version" menuName="MoonMacro 1.0" />
+        <MenuSelectButton className="menu-version">
+          MoonMacro 1.0
+        </MenuSelectButton>
         <WriteButton
           openWriteModal={openWriteModal}
           className="second-write-button"

@@ -167,6 +167,11 @@
       svg {
         color: var(--primary-text-color);
         display: none;
+
+        &:hover {
+          color: var(--secondary-text-color);
+        }
+
         &:focus {
           outline: none;
           border: none;
@@ -220,13 +225,14 @@
   border: none;
   width: 100%;
   background-color: var(--primary-popup-color);
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   cursor: pointer;
   display: flex;
   align-items: center;
   border-radius: 0.3rem;
   font-size: 14px;
   font-weight: 500;
+  gap: 0.5rem;
 
   svg {
     width: 20px;
@@ -234,15 +240,14 @@
   }
 
   span {
-    margin-left: 6px;
     position: relative;
     top: 1px;
   }
 
   &.options-popup-button-delete {
-    color: #f93a37;
+    color: #f93a37ba;
 
-    svg {
+    &:hover {
       color: #f93a37;
     }
   }
@@ -257,6 +262,7 @@
 .sidebar-footer {
   flex-shrink: 0;
   padding: 10px;
+  margin-bottom: 10px;
 
   .footer-profile {
     display: flex;

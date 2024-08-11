@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
-import SettingsPopup from "./components/Share/SettingsPopup";
+import SettingsPopup from "./components/SettingsPopup/SettingsPopup";
 
 function App() {
   // 로컬 스토리지에서 초기 사이드바 상태를 가져옴
