@@ -141,6 +141,12 @@ const ThemeSelectOptions = () => {
           </svg>
         </div>
       </div>
+      {isOpen && (
+        <div
+          className={`select-option-overlay ${isOpen ? "open" : "closed"}`}
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
     </>
   );
 };
