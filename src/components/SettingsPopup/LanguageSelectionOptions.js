@@ -3,9 +3,11 @@ import MenuSelectButton from "../Share/MenuSelectButton";
 
 // 언어 선택 옵션 컴포넌트
 const languages = [
-  { value: "en", label: "영어" },
+  { value: "system", label: "자동탐지" },
+  { value: "en", label: "English(US)" },
   { value: "ko", label: "한국어" },
-  { value: "zh-CN", label: "중국어" },
+  { value: "zh-CN", label: "简体中文" },
+  { value: "zh-TW", label: "繁體中文" },
 ];
 
 const LanguageSelectionOptions = () => {
@@ -81,17 +83,10 @@ const LanguageSelectionOptions = () => {
   };
 
   const systemLanguage = getSystemLanguage();
-  const languageName = (language) => {
-    switch (language) {
-      case "en":
-        return "영어";
-      case "ko":
-        return "한국어";
-      case "zh-CN":
-        return "중국어";
-      default:
-        return "자동탐지";
-    }
+  // 언어 코드에 해당하는 label을 반환하는 함수
+  const languageName = (languageCode) => {
+    const language = languages.find(({ value }) => value === languageCode);
+    return language ? language.label : "알 수 없음"; // 해당 언어 코드가 없으면 "알 수 없음" 반환
   };
 
   return (
@@ -182,7 +177,9 @@ const LanguageSelectionOptions = () => {
         <div className="select-option-divider"></div>
 
         {languages.map(({ value, label }) =>
-          language !== value && systemLanguage !== value ? (
+          language !== value &&
+          systemLanguage !== value &&
+          value !== "system" ? (
             <div
               key={value}
               className={`select-option-item`}
