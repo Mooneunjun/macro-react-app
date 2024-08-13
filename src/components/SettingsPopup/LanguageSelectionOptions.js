@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import MenuSelectButton from "../Share/MenuSelectButton";
 
+// 언어 선택 옵션 컴포넌트
+const languages = [
+  { value: "en", label: "영어" },
+  { value: "ko", label: "한국어" },
+  { value: "zh-CN", label: "중국어" },
+];
+
 const LanguageSelectionOptions = () => {
   // 로컬 스토리지에서 초기 언어를 가져오는 함수
   const getInitialLanguage = () => {
@@ -73,6 +80,20 @@ const LanguageSelectionOptions = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const systemLanguage = getSystemLanguage();
+  const languageName = (language) => {
+    switch (language) {
+      case "en":
+        return "영어";
+      case "ko":
+        return "한국어";
+      case "zh-CN":
+        return "중국어";
+      default:
+        return "자동탐지";
+    }
+  };
+
   return (
     <>
       <MenuSelectButton
@@ -80,15 +101,7 @@ const LanguageSelectionOptions = () => {
         onMouseDown={(e) => e.preventDefault()} // 기본 동작 중지
         onClick={toggleOptions} // 클릭 시 토글
       >
-        {language === "system"
-          ? "자동탐지"
-          : language === "en"
-          ? "영어"
-          : language === "ko"
-          ? "한국어"
-          : language === "zh-CN"
-          ? "중국어"
-          : "자동탐지"}
+        {languageName(language)}
       </MenuSelectButton>
       <div
         className={`select-option ${isOpen ? "open" : "closed"}`}
@@ -124,18 +137,7 @@ const LanguageSelectionOptions = () => {
               value={language}
               onClick={() => changeLanguage(language)}
             >
-              <span>
-                {" "}
-                {language === "system"
-                  ? "자동탐지"
-                  : language === "en"
-                  ? "영어"
-                  : language === "ko"
-                  ? "한국어"
-                  : language === "zh-CN"
-                  ? "중국어"
-                  : "자동탐지"}
-              </span>
+              <span>{languageName(language)}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -154,23 +156,13 @@ const LanguageSelectionOptions = () => {
 
         {
           //시스템의 언어를 추천하기 위한 옵션 추가
-          language === getSystemLanguage() ? null : (
-            //   console.log("system language: ", getSystemLanguage())
+          language === systemLanguage ? null : (
             <div
               className={`select-option-item`}
-              value={getSystemLanguage()}
-              onClick={() => changeLanguage(getSystemLanguage())}
+              value={systemLanguage}
+              onClick={() => changeLanguage(systemLanguage)}
             >
-              <span>
-                {" "}
-                {getSystemLanguage() === "en"
-                  ? "영어"
-                  : getSystemLanguage() === "ko"
-                  ? "한국어"
-                  : getSystemLanguage() === "zh-CN"
-                  ? "중국어"
-                  : "자동탐지"}
-              </span>
+              <span>{languageName(systemLanguage)} </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -189,37 +181,15 @@ const LanguageSelectionOptions = () => {
 
         <div className="select-option-divider"></div>
 
-        {language !== "en" && getSystemLanguage() !== "en" ? (
-          <div
-            className={`select-option-item`}
-            value="en"
-            onClick={() => changeLanguage("en")}
-          >
-            <span>영어</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="size-6"
-            >
-              <path
-                fillRule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-        ) : null}
-
-        {
-          // 한국어 옵션 추가
-          language !== "ko" && getSystemLanguage() !== "ko" ? (
+        {languages.map(({ value, label }) =>
+          language !== value && systemLanguage !== value ? (
             <div
+              key={value}
               className={`select-option-item`}
-              value="ko"
-              onClick={() => changeLanguage("ko")}
+              value={value}
+              onClick={() => changeLanguage(value)}
             >
-              <span>한국어</span>
+              <span>{label}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -234,32 +204,7 @@ const LanguageSelectionOptions = () => {
               </svg>
             </div>
           ) : null
-        }
-
-        {
-          // 중국어 옵션 추가
-          language !== "zh-CN" && getInitialLanguage() !== "zh-CN" ? (
-            <div
-              className={`select-option-item`}
-              value="zh-CN"
-              onClick={() => changeLanguage("zh-CN")}
-            >
-              <span>중국어</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-6"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          ) : null
-        }
+        )}
       </div>
 
       {
