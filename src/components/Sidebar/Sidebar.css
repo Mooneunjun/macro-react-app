@@ -117,7 +117,7 @@
   svg {
     position: absolute;
     left: 10px;
-    color: #e4e4e4c0;
+    color: var(--primary-text-color);
     z-index: 99;
   }
 
