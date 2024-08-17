@@ -3,8 +3,10 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SettingsPopup from "./components/SettingsPopup/SettingsPopup";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t, i18n } = useTranslation();
   // 로컬 스토리지에서 초기 사이드바 상태를 가져옴
   const getInitialSidebarState = () => {
     const savedState = localStorage.getItem("isSidebarOpen");
@@ -85,6 +87,7 @@ function App() {
           }}
         />
       )}
+      {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */}
       {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */}
       <SettingsPopup
         className={`${isSettingsPopupOpen ? "open" : "closed"} `}
