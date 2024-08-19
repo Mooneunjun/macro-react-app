@@ -1,0 +1,28 @@
+{
+  "welcome": "私たちのアプリケーションへようこそ！",
+  "sidebarTippy.close": "サイドバーを閉じる",
+  "sidebarTippy.open": "サイドバーを開く",
+  "sidebarTippy.write": "新しいノート",
+  "sidebarTippy.option": "オプション",
+
+  "sidebarPopup.recent": "最近",
+  "sidebarPopup.pin": "ピン留め",
+  "sidebarPopup.edit": "編集",
+  "sidebarPopup.delete": "削除",
+
+  "profilePopup.setting": "設定",
+  "profilePopup.help": "ヘルプ & FAQ",
+  "profilePopup.logout": "ログアウト",
+
+  "settinsPopup.title": "設定",
+  "settinsPopup.theme": "テーマ",
+  "settinsPopup.theme.system": "システム",
+  "settinsPopup.theme.dark": "ダーク",
+  "settinsPopup.theme.light": "ライト",
+  "settinsPopup.language": "言語",
+  "settinsPopup.language.auto-detect": "自動検出",
+  "settinsPopup.deleteAllNotes": "すべてのノートを削除",
+  "settinsPopup.deleteAll": "すべて削除",
+  "settinsPopup.logoutAllDevices": "すべてのデバイスからログアウト",
+  "settinsPopup.logoutAll": "すべてログアウト"
+}

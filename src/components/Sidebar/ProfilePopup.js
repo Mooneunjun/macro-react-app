@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ProfilePopup = ({
   toggleProfilePopup,
@@ -6,6 +7,7 @@ const ProfilePopup = ({
   toggleSidebar,
   className,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={`profile-popup ${className}`}>
       <nav className="profile-popup-content">
@@ -41,7 +43,12 @@ const ProfilePopup = ({
               clipRule="evenodd"
             ></path>
           </svg>
-          <span>설정</span>
+          <span>
+            {
+              //다국어 "설정" 텍스트
+              t("profilePopup.setting")
+            }
+          </span>
         </div>
         <div className="profile-popup-item profile-popup-help">
           <svg
@@ -58,7 +65,12 @@ const ProfilePopup = ({
               clipRule="evenodd"
             ></path>
           </svg>
-          <span>도움말 (FAQ)</span>
+          <span>
+            {
+              //다국어 "도움말" 텍스트
+              t("profilePopup.help")
+            }
+          </span>
         </div>
 
         <div className="profile-popup-border"></div>
@@ -77,7 +89,12 @@ const ProfilePopup = ({
               clipRule="evenodd"
             ></path>
           </svg>
-          <span>로그아웃</span>
+          <span>
+            {
+              //다국어 "로그아웃" 텍스트
+              t("profilePopup.logout")
+            }
+          </span>
         </div>
       </nav>
     </div>

@@ -1,0 +1,27 @@
+{
+  "welcome": "歡迎來到我們的應用程序！",
+  "sidebarTippy.close": "關閉側邊欄",
+  "sidebarTippy.open": "打開側邊欄",
+  "sidebarTippy.write": "新建筆記",
+  "sidebarTippy.option": "選項",
+  "sidebarPopup.recent": "最近",
+  "sidebarPopup.pin": "置頂",
+  "sidebarPopup.edit": "編輯",
+  "sidebarPopup.delete": "刪除",
+
+  "profilePopup.setting": "設定",
+  "profilePopup.help": "幫助與常見問題",
+  "profilePopup.logout": "退出登錄",
+
+  "settinsPopup.title": "設定",
+  "settinsPopup.theme": "主題",
+  "settinsPopup.theme.system": "系統",
+  "settinsPopup.theme.dark": "深色模式",
+  "settinsPopup.theme.light": "淺色模式",
+  "settinsPopup.language": "語言",
+  "settinsPopup.language.auto-detect": "自動檢測",
+  "settinsPopup.deleteAllNotes": "刪除所有筆記",
+  "settinsPopup.deleteAll": "刪除所有",
+  "settinsPopup.logoutAllDevices": "登出所有設備",
+  "settinsPopup.logoutAll": "全部登出"
+}

@@ -3,11 +3,20 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import "./MyTooltip.css";
 import "tippy.js/dist/border.css";
+import { useTranslation } from "react-i18next";
 
 const WriteButton = ({ openWriteModal, className }) => {
+  const { t } = useTranslation();
   const placement = className === "menu-write-button" ? "right" : "bottom";
   return (
-    <Tippy content={`글쓰기`} placement={`${placement}`} theme="black">
+    <Tippy
+      content={
+        // 다국어 "글쓰기" 텍스트
+        t("sidebarTippy.write")
+      }
+      placement={`${placement}`}
+      theme="black"
+    >
       <button className={className} onClick={openWriteModal}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

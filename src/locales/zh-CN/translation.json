@@ -1,0 +1,27 @@
+{
+  "welcome": "欢迎来到我们的应用程序！",
+  "sidebarTippy.close": "关闭侧边栏",
+  "sidebarTippy.open": "打开侧边栏",
+  "sidebarTippy.write": "新建笔记",
+  "sidebarTippy.option": "选项",
+  "sidebarPopup.recent": "最近",
+  "sidebarPopup.pin": "置顶",
+  "sidebarPopup.edit": "编辑",
+  "sidebarPopup.delete": "删除",
+
+  "profilePopup.setting": "设置",
+  "profilePopup.help": "帮助与常见问题",
+  "profilePopup.logout": "退出登录",
+
+  "settinsPopup.title": "设置",
+  "settinsPopup.theme": "主题",
+  "settinsPopup.theme.system": "系统",
+  "settinsPopup.theme.dark": "深色模式",
+  "settinsPopup.theme.light": "浅色模式",
+  "settinsPopup.language": "语言",
+  "settinsPopup.language.auto-detect": "自动检测",
+  "settinsPopup.deleteAllNotes": "删除所有笔记",
+  "settinsPopup.deleteAll": "删除所有",
+  "settinsPopup.logoutAllDevices": "登出所有设备",
+  "settinsPopup.logoutAll": "全部登出"
+}

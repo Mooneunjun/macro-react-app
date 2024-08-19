@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import MenuSelectButton from "../Share/MenuSelectButton";
+import { useTranslation } from "react-i18next";
 
 const ThemeSelectOptions = () => {
+  const { t } = useTranslation();
   // 로컬 스토리지에서 초기 테마를 가져오는 함수
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
@@ -70,10 +72,13 @@ const ThemeSelectOptions = () => {
         onClick={toggleOptions} // 클릭 시 토글
       >
         {theme === "system"
-          ? "시스템"
+          ? // 시스템 테마일 경우 다국어 텍스트
+            t("settinsPopup.theme.system")
           : theme === "dark"
-          ? "다크 모드"
-          : "라이트 모드"}
+          ? // 다크 테마일 경우 다국어 텍스트
+            t("settinsPopup.theme.dark")
+          : // 라이트 테마일 경우 다국어 텍스트
+            t("settinsPopup.theme.light")}
       </MenuSelectButton>
       <div
         className={`select-option ${isOpen ? "open" : "closed"}`}
@@ -86,7 +91,12 @@ const ThemeSelectOptions = () => {
           value="system"
           onClick={() => changeTheme("system")}
         >
-          <span>시스템</span>
+          <span>
+            {
+              // 다국어 "시스템" 텍스트
+              t("settinsPopup.theme.system")
+            }
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -105,7 +115,12 @@ const ThemeSelectOptions = () => {
           value="dark"
           onClick={() => changeTheme("dark")}
         >
-          <span>다크 모드</span>
+          <span>
+            {
+              // 다국어 "다크 모드" 텍스트
+              t("settinsPopup.theme.dark")
+            }
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -126,7 +141,12 @@ const ThemeSelectOptions = () => {
           value="light"
           onClick={() => changeTheme("light")}
         >
-          <span>라이트 모드</span>
+          <span>
+            {
+              // 다국어 "라이트 모드" 텍스트
+              t("settinsPopup.theme.light")
+            }
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

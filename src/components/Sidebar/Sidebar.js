@@ -12,6 +12,7 @@ const Sidebar = ({
   isSidebarOpen,
   openSettingsPopup,
   transitionEnabled,
+  t,
 }) => {
   const [searchText, setSearchText] = useState("");
 

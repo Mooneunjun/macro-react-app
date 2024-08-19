@@ -2,12 +2,19 @@ import React from "react";
 import "./SettingsPopup.css";
 import ThemeSelectOptions from "./ThemeSelectOptions"; // 새 컴포넌트 임포트
 import LanguageSelectionOptions from "./LanguageSelectionOptions";
+import { useTranslation } from "react-i18next";
 
 const SettingsPopup = ({ className, closeSettingsPopup }) => {
+  const { t } = useTranslation();
   return (
     <div className={`settings-popup ${className}`}>
       <div className="popup-header">
-        <h3>설정</h3>
+        <h3>
+          {
+            //다국어 "설정" 타이틀 텍스트
+            t("settinsPopup.title")
+          }
+        </h3>
         <button className="close-button" onClick={closeSettingsPopup}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,23 +34,53 @@ const SettingsPopup = ({ className, closeSettingsPopup }) => {
       </div>
       <div className="popup-content">
         <div className="content-row">
-          <span>화면 모드</span>
+          <span>
+            {
+              //다국어 "화면 모드" 텍스트
+              t("settinsPopup.theme")
+            }
+          </span>
           <ThemeSelectOptions />
         </div>
 
         <div className="content-row">
-          <span>언어</span>
+          <span>
+            {
+              //다국어 "언어" 텍스트
+              t("settinsPopup.language")
+            }
+          </span>
           <LanguageSelectionOptions />
         </div>
 
         <div className="content-row">
-          <span>모든 노트 삭제하기</span>
-          <button className="delete-button">모두 삭제</button>
+          <span>
+            {
+              //다국어 "모든 노트 삭제하기" 텍스트
+              t("settinsPopup.deleteAllNotes")
+            }
+          </span>
+          <button className="delete-button">
+            {
+              //다국어 "모두 삭제" 텍스트
+              t("settinsPopup.deleteAll")
+            }
+          </button>
         </div>
 
         <div className="content-row">
-          <span>모든 장치에서 로그아웃</span>
-          <button className="logout-button">모두 로그아웃</button>
+          <span>
+            {
+              //다국어 "모든 장치에서 로그아웃" 텍스트
+              t("settinsPopup.logoutAllDevices")
+            }
+          </span>
+          <button className="logout-button">
+            {
+              //다국어 "모두 로그아웃" 텍스트
+              t("settinsPopup.logoutAll")
+            }
+          </button>
         </div>
       </div>
     </div>

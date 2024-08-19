@@ -6,6 +6,7 @@ import React, {
   useMemo,
 } from "react";
 import MenuSelectButton from "../Share/MenuSelectButton";
+import { useTranslation } from "react-i18next";
 
 // 언어 선택 옵션 배열
 const languages = [
@@ -15,6 +16,7 @@ const languages = [
   { value: "zh-CN", label: "简体中文" },
   { value: "zh-TW", label: "繁體中文" },
   { value: "ja", label: "日本語" },
+  { value: "vi", label: "Tiếng Việt" },
 ];
 
 // 로컬 스토리지 관련 유틸리티 함수
@@ -23,6 +25,8 @@ const setStoredLanguage = (language) =>
   localStorage.setItem("language", language);
 
 const LanguageSelectionOptions = () => {
+  const { t, i18n } = useTranslation();
+
   // 초기 언어 설정
   const [language, setLanguage] = useState(getStoredLanguage() || "system");
   const [isOpen, setIsOpen] = useState(false);
@@ -51,10 +55,11 @@ const LanguageSelectionOptions = () => {
 
       const languageToApply =
         newLanguage === "system" ? systemLanguage : newLanguage;
+      i18n.changeLanguage(languageToApply); // i18n에 적용
       document.documentElement.setAttribute("data-Language", languageToApply);
       setIsOpen(false); // 언어 변경 후 팝업 닫기
     },
-    [systemLanguage]
+    [i18n, systemLanguage]
   );
 
   // 초기 언어 설정 (useEffect로 초기 실행)
@@ -132,7 +137,13 @@ const LanguageSelectionOptions = () => {
           value="system"
           onClick={() => changeLanguage("system")} // '자동탐지' 옵션을 선택 시 언어 변경
         >
-          <span>자동탐지</span>
+          <span>
+            {
+              /* 다국어 "자동탐지" 텍스트 */
+
+              t("settinsPopup.language.auto-detect")
+            }
+          </span>
           <CheckIcon /> {/* 선택된 항목을 표시하는 체크 아이콘 */}
         </div>
         {/* 현재 선택된 언어 표시 (시스템이 아닌 경우에만) */}
@@ -170,7 +181,12 @@ const LanguageSelectionOptions = () => {
               value={value}
               onClick={() => changeLanguage(value)} // 해당 언어로 변경
             >
-              <span>{label}</span>
+              <span>
+                {label === "자동탐지"
+                  ? t("settinsPopup.language.auto-detect")
+                  : label}
+              </span>
+
               <CheckIcon />
             </div>
           ) : null

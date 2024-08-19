@@ -4,20 +4,21 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import "../Share/MyTooltip.css";
 import "tippy.js/dist/border.css";
+import { useTranslation } from "react-i18next";
 
 const fixationMenuItems = [
-  { name: "홈", fixDate: "2024-07-28T12:34:56.789Z" },
-  { name: "프로필", fixDate: "2024-07-27T15:00:00.000Z" },
-  { name: "설정", fixDate: "2024-07-27T15:00:00.000Z" },
-  { name: "로그아웃", fixDate: "2024-07-27T15:00:00.000Z" },
-  { name: "도움말", fixDate: "2024-07-22T15:00:00.000Z" },
-  { name: "문의하기", fixDate: "2024-07-24T15:00:00.000Z" },
+  { name: "고정된 노트 2024/07/28", fixDate: "2024-07-28T12:34:56.789Z" },
+  { name: "고정된 노트 1 2024/07/27", fixDate: "2024-07-27T15:00:00.000Z" },
+  { name: "고정된 노트 2 2024/07/27", fixDate: "2024-07-27T15:00:00.000Z" },
+  { name: "고정된 노트 3 2024/07/27", fixDate: "2024-07-27T15:00:00.000Z" },
+  { name: "고정된 노트 2024/07/22", fixDate: "2024-07-22T15:00:00.000Z" },
+  { name: "고정된 노트 2024/07/24", fixDate: "2024-07-24T15:00:00.000Z" },
 ];
 
 const menuItems = [
-  { name: "메뉴1", date: "2024-07-20T15:00:00.000Z" },
-  { name: "메뉴2", date: "2024-07-22T15:00:00.000Z" },
-  { name: "메뉴3", date: "2024-07-21T15:00:00.000Z" },
+  { name: "노트 2024/07/20", date: "2024-07-20T15:00:00.000Z" },
+  { name: "노트 2024/07/22", date: "2024-07-22T15:00:00.000Z" },
+  { name: "노트 2024/07/21", date: "2024-07-21T15:00:00.000Z" },
 ];
 
 // fixDate를 기준으로 최신 순으로 정렬
@@ -30,6 +31,7 @@ const sortedMenuItems = [...menuItems].sort(
 );
 
 const MenuItems = () => {
+  const { t } = useTranslation();
   const [popupIndex, setPopupIndex] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
   const popupRef = useRef(null); // 팝업 요소 참조
@@ -77,7 +79,12 @@ const MenuItems = () => {
   return (
     <div>
       <ul>
-        <p>고정</p>
+        <p>
+          {
+            //다국어 "고정" 텍스트
+            t("sidebarPopup.pin")
+          }
+        </p>
         {sortedFixationMenuItems.map((item, index) => (
           <li className="macro-list" key={`fix-${index}`}>
             <div
@@ -86,7 +93,14 @@ const MenuItems = () => {
               }`}
             >
               <span>{item.name}</span>
-              <Tippy content={`옵션`} placement="top" theme="black">
+              <Tippy
+                content={
+                  //다국어 "옵션" 텍스트
+                  t("sidebarTippy.option")
+                }
+                placement="top"
+                theme="black"
+              >
                 <svg
                   className="macro-list-option"
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +119,12 @@ const MenuItems = () => {
         ))}
       </ul>
       <ul>
-        <p>최근</p>
+        <p>
+          {
+            //다국어 "최근" 텍스트
+            t("sidebarPopup.recent")
+          }
+        </p>
         {sortedMenuItems.map((item, index) => {
           const adjustedIndex = index + sortedFixationMenuItems.length;
           return (
@@ -116,7 +135,14 @@ const MenuItems = () => {
                 }${popupIndex === adjustedIndex ? " focused" : ""}`}
               >
                 <span>{item.name}</span>
-                <Tippy content={`옵션`} placement="bottom" theme="black">
+                <Tippy
+                  content={
+                    //다국어 "옵션" 텍스트
+                    t("sidebarTippy.option")
+                  }
+                  placement="top"
+                  theme="black"
+                >
                   <svg
                     className="macro-list-option"
                     xmlns="http://www.w3.org/2000/svg"

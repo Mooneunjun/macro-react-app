@@ -1,3 +1,28 @@
 {
-  "welcome": "Welcome to our application!"
+  "welcome": "Welcome to our application!",
+  "sidebarTippy.close": "Close sidebar",
+  "sidebarTippy.open": "Open sidebar",
+  "sidebarTippy.write": "New note",
+  "sidebarTippy.option": "Options",
+
+  "sidebarPopup.recent": "Recent",
+  "sidebarPopup.pin": "Pin",
+  "sidebarPopup.edit": "Edit",
+  "sidebarPopup.delete": "Delete",
+
+  "profilePopup.setting": "Settings",
+  "profilePopup.help": "Help & FAQ",
+  "profilePopup.logout": "Log out",
+
+  "settinsPopup.title": "Settings",
+  "settinsPopup.theme": "Theme",
+  "settinsPopup.theme.system": "System",
+  "settinsPopup.theme.dark": "Dark",
+  "settinsPopup.theme.light": "Light",
+  "settinsPopup.language": "Language",
+  "settinsPopup.language.auto-detect": "Auto-detect",
+  "settinsPopup.deleteAllNotes": "Delete all notes",
+  "settinsPopup.deleteAll": "Delete all",
+  "settinsPopup.logoutAllDevices": "Log out of all devices",
+  "settinsPopup.logoutAll": "Log out all"
 }

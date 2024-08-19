@@ -1,12 +1,12 @@
-// src/i18n.js
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
-// 언어별 번역 파일 import
 import translationEN from "./locales/en/translation.json";
 import translationKO from "./locales/ko/translation.json";
+import translationZHCN from "./locales/zh-CN/translation.json";
+import translationZHTW from "./locales/zh-TW/translation.json";
+import translationJA from "./locales/ja/translation.json";
+import translationVI from "./locales/vi/translation.json";
 
-// 번역 리소스 설정
 const resources = {
   en: {
     translation: translationEN,
@@ -14,15 +14,26 @@ const resources = {
   ko: {
     translation: translationKO,
   },
+  "zh-CN": {
+    translation: translationZHCN,
+  },
+  "zh-TW": {
+    translation: translationZHTW,
+  },
+  ja: {
+    translation: translationJA,
+  },
+  vi: {
+    translation: translationVI,
+  },
 };
 
-// i18n 초기화
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en", // 초기 언어 설정
-  fallbackLng: "en", // 지원하지 않는 언어일 경우 대체 언어
+  lng: "en", // 기본 언어
+  fallbackLng: "en", // 지원되지 않는 언어일 경우 사용할 언어
   interpolation: {
-    escapeValue: false, // React에서는 XSS 보호를 자동으로 하므로 false로 설정
+    escapeValue: false, // React는 이미 XSS를 방지하므로 설정 불필요
   },
 });
 

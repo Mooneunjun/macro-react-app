@@ -1,3 +1,27 @@
 {
-  "welcome": "우리 애플리케이션에 오신 것을 환영합니다!"
+  "welcome": "우리 애플리케이션에 오신 것을 환영합니다!",
+  "sidebarTippy.close": "사이드바 닫기",
+  "sidebarTippy.open": "사이드바 열기",
+  "sidebarTippy.write": "글쓰기",
+  "sidebarTippy.option": "옵션",
+  "sidebarPopup.recent": "최근",
+  "sidebarPopup.pin": "고정",
+  "sidebarPopup.edit": "편집",
+  "sidebarPopup.delete": "삭제",
+
+  "profilePopup.setting": "설정",
+  "profilePopup.help": "도움말 (FAQ)",
+  "profilePopup.logout": "로그아웃",
+
+  "settinsPopup.title": "설정",
+  "settinsPopup.theme": "화면 모드",
+  "settinsPopup.theme.system": "시스템",
+  "settinsPopup.theme.dark": "다크 모드",
+  "settinsPopup.theme.light": "라이트 모드",
+  "settinsPopup.language": "언어",
+  "settinsPopup.language.auto-detect": "자동탐지",
+  "settinsPopup.deleteAllNotes": "모든 노트 삭제하기",
+  "settinsPopup.deleteAll": "모두 삭제",
+  "settinsPopup.logoutAllDevices": "모든 장치에서 로그아웃",
+  "settinsPopup.logoutAll": "모두 로그아웃"
 }

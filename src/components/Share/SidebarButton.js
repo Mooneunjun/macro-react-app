@@ -3,9 +3,15 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import "./MyTooltip.css";
 import "tippy.js/dist/border.css";
+import { useTranslation } from "react-i18next";
 
 const SidebarButton = ({ toggleSidebar, className, isSidebarOpen }) => {
-  const tooltipText = isSidebarOpen ? "사이드바 닫기" : "사이드바 열기";
+  const { t } = useTranslation();
+
+  // 다국어 "사이드바 열기" 또는 "사이드바 닫기" 텍스트
+  const tooltipText = isSidebarOpen
+    ? t("sidebarTippy.close")
+    : t("sidebarTippy.open");
 
   return (
     <Tippy content={tooltipText} placement="bottom-start" theme="black">

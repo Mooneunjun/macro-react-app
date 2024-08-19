@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useTranslation } from "react-i18next";
 
 const Popup = React.forwardRef(({ isVisible, position }, ref) => {
+  const { t } = useTranslation();
   if (!isVisible) return null;
 
   return ReactDOM.createPortal(
@@ -22,7 +24,12 @@ const Popup = React.forwardRef(({ isVisible, position }, ref) => {
             clipRule="evenodd"
           />
         </svg>
-        <span>고정</span>
+        <span>
+          {
+            //다국어 "고정" 텍스트
+            t("sidebarPopup.pin")
+          }
+        </span>
       </div>
       <div className="options-popup-button-edit">
         <svg
@@ -39,7 +46,12 @@ const Popup = React.forwardRef(({ isVisible, position }, ref) => {
             clipRule="evenodd"
           ></path>
         </svg>
-        <span>수정</span>
+        <span>
+          {
+            //다국어 "수정" 텍스트
+            t("sidebarPopup.edit")
+          }
+        </span>
       </div>
       <div className="options-popup-button-delete">
         <svg
@@ -56,7 +68,12 @@ const Popup = React.forwardRef(({ isVisible, position }, ref) => {
             clipRule="evenodd"
           ></path>
         </svg>
-        <span>삭제</span>
+        <span>
+          {
+            //다국어 "삭제" 텍스트
+            t("sidebarPopup.delete")
+          }
+        </span>
       </div>
     </div>,
     document.body // 팝업을 body에 렌더링

@@ -1,0 +1,28 @@
+{
+  "welcome": "Chào mừng đến với ứng dụng của chúng tôi!",
+  "sidebarTippy.close": "Đóng thanh bên",
+  "sidebarTippy.open": "Mở thanh bên",
+  "sidebarTippy.write": "Ghi chú mới",
+  "sidebarTippy.option": "Tùy chọn",
+
+  "sidebarPopup.recent": "Gần đây",
+  "sidebarPopup.pin": "Ghim",
+  "sidebarPopup.edit": "Chỉnh sửa",
+  "sidebarPopup.delete": "Xóa",
+
+  "profilePopup.setting": "Cài đặt",
+  "profilePopup.help": "Trợ giúp & Câu hỏi thường gặp",
+  "profilePopup.logout": "Đăng xuất",
+
+  "settinsPopup.title": "Cài đặt",
+  "settinsPopup.theme": "Chủ đề",
+  "settinsPopup.theme.system": "Hệ thống",
+  "settinsPopup.theme.dark": "Tối",
+  "settinsPopup.theme.light": "Sáng",
+  "settinsPopup.language": "Ngôn ngữ",
+  "settinsPopup.language.auto-detect": "Tự động phát hiện",
+  "settinsPopup.deleteAllNotes": "Xóa tất cả ghi chú",
+  "settinsPopup.deleteAll": "Xóa tất cả",
+  "settinsPopup.logoutAllDevices": "Đăng xuất khỏi tất cả thiết bị",
+  "settinsPopup.logoutAll": "Đăng xuất tất cả"
+}

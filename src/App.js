@@ -3,10 +3,8 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SettingsPopup from "./components/SettingsPopup/SettingsPopup";
-import { useTranslation } from "react-i18next";
 
 function App() {
-  const { t, i18n } = useTranslation();
   // 로컬 스토리지에서 초기 사이드바 상태를 가져옴
   const getInitialSidebarState = () => {
     const savedState = localStorage.getItem("isSidebarOpen");
@@ -23,7 +21,7 @@ function App() {
     setWasSidebarOpen(!isSidebarOpen); // 이전 상태를 저장
 
     localStorage.setItem("isSidebarOpen", JSON.stringify(newIsSidebarOpen)); // 로컬 스토리지에 저장
-    console.log(`사이드바 ${newIsSidebarOpen ? "열림" : "닫힘"}`);
+    console.log(`사이드바 ${newIsSidebarOpen ? "열기" : "닫기"}`);
   };
 
   const openWriteModal = () => {
