@@ -1,7 +1,7 @@
 import React from "react";
 import "./SettingsPopup.css";
-import ThemeSelectOptions from "./ThemeSelectOptions"; // 새 컴포넌트 임포트
-import LanguageSelectionOptions from "./LanguageSelectionOptions";
+import ThemeSelectOptions from "./ThemeSelectOptions/ThemeSelectOptions"; // 새 컴포넌트 임포트
+import LanguageSelectionOptions from "./LanguageSelectionOptions/LanguageSelectionOptions";
 import { useTranslation } from "react-i18next";
 
 const SettingsPopup = ({ className, closeSettingsPopup }) => {

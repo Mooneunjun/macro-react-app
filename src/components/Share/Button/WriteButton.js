@@ -1,7 +1,7 @@
 import React from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
-import "./MyTooltip.css";
+import "../MyTooltip.css";
 import "tippy.js/dist/border.css";
 import { useTranslation } from "react-i18next";
 

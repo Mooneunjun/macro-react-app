@@ -67,6 +67,7 @@ function App() {
         toggleSidebar={toggleSidebar}
         openWriteModal={openWriteModal}
         isSidebarOpen={isSidebarOpen}
+        openSettingsPopup={openSettingsPopup}
       />
       <Sidebar
         toggleSidebar={toggleSidebar}

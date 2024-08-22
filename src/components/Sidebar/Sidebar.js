@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import WriteButton from "../Share/WriteButton";
-import SidebarButton from "../Share/SidebarButton";
-import ProfileButton from "../Share/ProfileButton";
+import WriteButton from "../Share/Button/WriteButton";
+import SidebarButton from "../Share/Button/SidebarButton";
+import ProfileButton from "../Share/Button/ProfileButton";
 import MenuItems from "./MenuItems";
 import SidebarFooter from "./SidebarFooter";
 

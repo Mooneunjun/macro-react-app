@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ProfileButton from "../Share/ProfileButton";
-import ProfilePopup from "./ProfilePopup";
+import ProfileButton from "../Share/Button/ProfileButton";
+import ProfilePopup from "../Share/ProfilePopup/ProfilePopup";
 
 const SidebarFooter = ({ openSettingsPopup, toggleSidebar }) => {
   const [isProfilePopupOpen, setIsProfilePopupOpen] = useState(false);
@@ -49,7 +49,7 @@ const SidebarFooter = ({ openSettingsPopup, toggleSidebar }) => {
         toggleSidebar={toggleSidebar}
         className={`${
           isProfilePopupOpen ? "profile-popup-on" : "profile-popup-off"
-        }`}
+        } footer-profile-popup`}
       />
     </footer>
   );

@@ -85,7 +85,7 @@
       .theme-select-button {
         background-color: var(--primary-popup-color);
         height: 36px;
-        font-weight: 500;
+        font-weight: 400;
 
         span {
           color: var(--secondary-text-color);
@@ -161,7 +161,7 @@
       .language-select-button {
         background-color: var(--primary-popup-color);
         height: 36px;
-        font-weight: 500;
+        font-weight: 400;
 
         span {
           color: var(--secondary-text-color);

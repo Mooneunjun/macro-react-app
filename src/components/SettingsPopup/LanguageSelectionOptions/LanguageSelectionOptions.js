@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import MenuSelectButton from "../Share/MenuSelectButton";
+import MenuSelectButton from "../../Share/Button/MenuSelectButton";
 import { useTranslation } from "react-i18next";
 
 // 언어 선택 옵션 배열
