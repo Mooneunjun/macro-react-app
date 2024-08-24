@@ -5,6 +5,7 @@ import SidebarButton from "../Share/Button/SidebarButton";
 import ProfileButton from "../Share/Button/ProfileButton";
 import MenuItems from "./MenuItems";
 import SidebarFooter from "./SidebarFooter";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = ({
   toggleSidebar,
@@ -12,8 +13,8 @@ const Sidebar = ({
   isSidebarOpen,
   openSettingsPopup,
   transitionEnabled,
-  t,
 }) => {
+  const { t } = useTranslation();
   const [searchText, setSearchText] = useState("");
 
   const handleSearchTextChange = (event) => {
@@ -57,7 +58,7 @@ const Sidebar = ({
           </svg>
           <input
             type="text"
-            placeholder="검색"
+            placeholder={t("sidebar.search")}
             onChange={handleSearchTextChange}
             value={searchText} // input에 value를 설정하여 상태를 사용합니다.
           />

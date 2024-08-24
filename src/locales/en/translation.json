@@ -1,9 +1,12 @@
 {
   "welcome": "Welcome to our application!",
+
   "sidebarTippy.close": "Close sidebar",
   "sidebarTippy.open": "Open sidebar",
   "sidebarTippy.write": "New note",
   "sidebarTippy.option": "Options",
+
+  "sidebar.search": "Search",
 
   "sidebarPopup.recent": "Recent",
   "sidebarPopup.pin": "Pin",

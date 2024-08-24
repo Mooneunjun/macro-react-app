@@ -5,6 +5,8 @@
   "sidebarTippy.write": "글쓰기",
   "sidebarTippy.option": "옵션",
   "sidebarPopup.recent": "최근",
+
+  "sidebar.search": "검색",
   "sidebarPopup.pin": "고정",
   "sidebarPopup.edit": "편집",
   "sidebarPopup.delete": "삭제",
