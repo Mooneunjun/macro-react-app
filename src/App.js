@@ -88,7 +88,6 @@ function App() {
       )}
       {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */}
       {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */}
-      {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */} {/* 나머지 앱 내용 */}
       <SettingsPopup
         className={`${isSettingsPopupOpen ? "open" : "closed"} `}
         closeSettingsPopup={closeSettingsPopup}
