@@ -74,6 +74,35 @@ const ProfilePopup = ({
           </span>
         </div>
 
+        <div className="profile-popup-item profile-popup-feedback">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"
+            ></path>
+            <path
+              fill="currentColor"
+              d="M12 6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V7a1 1 0 0 1 1-1"
+            ></path>
+            <path
+              fill="currentColor"
+              d="M12 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1"
+            ></path>
+          </svg>
+          <span>
+            {
+              //다국어 "피드백" 텍스트
+              t("profilePopup.feedback")
+            }
+          </span>
+        </div>
+
         <div className="profile-popup-border"></div>
         <div className="profile-popup-item profile-popup-logout">
           <svg
