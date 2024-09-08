@@ -25,5 +25,9 @@
   "settinsPopup.deleteAllNotes": "删除所有笔记",
   "settinsPopup.deleteAll": "删除所有",
   "settinsPopup.logoutAllDevices": "登出所有设备",
-  "settinsPopup.logoutAll": "全部登出"
+  "settinsPopup.logoutAll": "全部登出",
+
+  "settinsPopup.deleteAllNotes.confirm": "您确定要删除所有笔记吗？",
+  "settinsPopup.deleteAll.confirm": "您确定要删除所有吗？",
+  "settinsPopup.logoutAllDevices.confirm": "您确定要从所有设备注销吗？"
 }

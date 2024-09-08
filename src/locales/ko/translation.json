@@ -26,5 +26,9 @@
   "settinsPopup.deleteAllNotes": "모든 노트 삭제하기",
   "settinsPopup.deleteAll": "모두 삭제",
   "settinsPopup.logoutAllDevices": "모든 장치에서 로그아웃",
-  "settinsPopup.logoutAll": "모두 로그아웃"
+  "settinsPopup.logoutAll": "모두 로그아웃",
+
+  "settinsPopup.deleteAllNotes.confirm": "모든 노트를 삭제하시겠습니까?",
+  "settinsPopup.deleteAll.confirm": "모두 삭제하시겠습니까?",
+  "settinsPopup.logoutAllDevices.confirm": "모든 장치에서 로그아웃하시겠습니까?"
 }
