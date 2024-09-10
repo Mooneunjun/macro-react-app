@@ -32,5 +32,7 @@
 
   "settinsPopup.deleteAllNotes.confirm": "Are you sure you want to delete all notes?",
   "settinsPopup.deleteAll.confirm": "Are you sure you want to delete all?",
-  "settinsPopup.logoutAllDevices.confirm": "Are you sure you want to log out of all devices?"
+  "settinsPopup.logoutAllDevices.confirm": "Are you sure you want to log out of all devices?",
+
+  "settinsPopup.info": "Information"
 }
